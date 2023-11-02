@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Form</title>
+</head>
+<body>
+    <nav class="nav-landing">
+        <a href="#"><img src="./images/logo.png" alt="Logo" class="logo"></a>
+    </nav>
+    <div class="body-landing-page" id="body-landing-page">
+        <div class="intermediateScreen">
+            <div class="form-container form-container-login" id="form-container-login">
+                <form class="form form-login" id="registroLogin">
+                    <h2>Iniciar sesión</h2>
+                    <hr>
+                    <div class="form-inputs">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" required>
+                        <button type="submit" class="btn-submit" id="btn-submit">Continuar</button>
+                        <p>¿No tienes cuenta? <a href="" id="signUp">Registrate</a></p>
+                    </div>
+                    <hr>
+                    <div class="form-networks">
+                        <a href="home.html"><img src="images/continuarGoogle.jpeg" alt="Continuar con Google"></a>
+                        <a href="home.html"><img src="images/continuarFacebook.jpeg" alt="Continuar con Facebook"></a>
+                    </div>
+                </form>
+            </div>
+            <div class="form-container form-container-signUp" id="form-container-signUp">
+                <form class="form form-signUp" id="registroForm">
+                    <h2>Registrate</h2>
+                    <p>¿Ya tienes cuenta? <a href="#" id="logIn">Ingresá</a></p>
+                    <div class="form-inputs">
+                        <label for="name">Nombre y Apellido*</label>
+                        <input type="text" name="name" id="name" required>
+                        <label for="nickname">Apodo(Opcional)</label>
+                        <input type="text" name="nickname" id="nickname">
+                        <label for="age">Edad*</label>
+                        <input type="number" name="age" id="age" required>
+                        <label for="email">Email*</label>
+                        <input type="email" name="email" id="email" required>
+                        <div class="form-group" id="password1-group">
+                            <label for="password1">Contraseña*</label>
+                            <div class="form-group-input">
+                                <input type="password" name="password1" class="form-input" id="password1" required>
+                                <i class="fa-solid fa-circle-exclamation form-validation-state"></i>
+                            </div>
+                            <p class="form-input-error">Debe contener de 4 a 12 dígitos y al menos un número y una mayúscula</p>
+                        </div>
+                        <div class="form-group" id="password2-group">
+                            <label for="password2">Repetir contraseña*</label>
+                            <div class="form-group-input">
+                                <input type="password" name="password2" class="form-input" id="password2" required>
+                                <i class="fa-solid fa-circle-exclamation form-validation-state"></i>
+                            </div>
+                            <p class="form-input-error form-input-error2">Ambas contraseñas deben coincidir</p>
+                        </div>
+                        <img src="./images/captcha.jpg" alt="Captcha" class="img-captcha">
+                        <div class="form-group">
+                            <button type="submit" class="btn-submit">Registrate</button>
+                            <p class="success-msg" id="success-msg">Formulario enviado exitosamente!</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/login-signup.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

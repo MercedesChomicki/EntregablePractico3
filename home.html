@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="body-page-loading" id="body-page-loading">
+        <div class="center">
+            <div class="ring"></div>
+            <div class="loading">
+                <span class="text">loading...</span>
+                <span class="percent">0</span>
+            </div>
+        </div>
+    </div> 
+    <div class="body-page-loaded" id="body-page-loaded">
+        <nav>
+            <div class="dropdown">
+                <a type="button" class="btn-dropdown dropdown-menu" id="btn-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <ol class="dropdown-content dropdown-content-menu" id="dropdown-content-menu">
+                    <li> 
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>Recomendados</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Accion" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-fire"></i>
+                            </div>
+                            <p>Acción</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Cartas" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-diamond"></i>
+                            </div>
+                            <p>Cartas</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Carreras" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-flag-checkered"></i>
+                            </div>
+                            <p>Carreras</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Clasicos" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-ghost"></i>
+                            </div>
+                            <p>Clásicos</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Deportes" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-volleyball"></i>
+                            </div>
+                            <p>Deportes</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="Educativos" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <p>Educativos</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="Estrategia" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-chess-knight"></i>
+                            </div>
+                            <p>Estrategia</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Memoria" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-brain"></i>  
+                            </div>
+                            <p>Memoria</p>
+                        </a>
+                    </li>
+                    <hr class="hr-nav">
+                    <li> 
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <p>Contactanos</p>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <img src="./images/logo.png" alt="Logo" class="logo">
+            <div class="dropdown">
+                <a type="button" class="btn-dropdown" id="btn-avatar">
+                    <img src="images/AVATARS/avatar1.png" alt="Avatar usuario" class="avatar">
+                </a>
+                <ol class="dropdown-content dropdown-content-avatar" id="dropdown-content-avatar">
+                    <li> 
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <p>Mi pefil</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-pencil"></i>
+                            </div>
+                            <p>Editar perfil</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </div>
+                            <p>Mi carrito</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <p>Mis favoritos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-gear"></i>
+                            </div>
+                            <p>Configuración de cuenta</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </div>
+                            <p>Cerrar sesión</p>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="icon icon-prev">
+                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                        </div>
+                        <div class="game-img">
+                            <img src="./images/DESTACADOS/minecraft.jpg" alt="Juego destacado 1">
+                        </div>
+                        <div class="icon icon-next">
+                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="icon icon-prev">
+                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                        </div>
+                        <div class="game-img">
+                            <img src="./images/DESTACADOS/avengers.jpg" alt="Juego destacado 2">
+                        </div>
+                        <div class="icon icon-next">
+                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="icon icon-prev">
+                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                        </div>
+                        <div class="game-img">
+                            <img src="./images/DESTACADOS/artofheist.jpg" alt="Juego destacado 3">
+                        </div>
+                        <div class="icon icon-next">
+                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="icon icon-prev">
+                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                        </div>
+                        <div class="game-img">
+                            <a href="juego.html">
+                                <img src="./images/DESTACADOS/cuatroenlinea.jpg" alt="Juego destacado 4">
+                            </a>
+                        </div>
+                        <div class="icon icon-next">
+                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="icon icon-prev">
+                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                        </div>
+                        <div class="game-img">
+                            <img src="./images/DESTACADOS/mario-bros.jpg" alt="Juego destacado 5">
+                        </div>
+                        <div class="icon icon-next">
+                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="container-carrousel" id="wrapper">
+                <h3 class="category">Cartas</h3>
+                <div class="carrousel" id="carrousel-1">
+                    <div class="carrousel-cards" id="carrousel-cards">
+                        <div class="carrousel-track" id="track-1">
+                            <div class="card" id="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Chinchón</h3>
+                                        <hr class="card-hr">
+                                        <p>Juego de cartas cuyo objetivo es combinar tus 7 cartas en series de escaleras del mismo palo o en grupos de 3 o más cartas</p>
+                                    </div>
+                                    <img src="images/CARTAS/Chinchón.jpg" alt="Chinchón" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Solitario</h3>
+                                        <hr class="card-hr">
+                                        <p>Es un juego de cartas en el que el objetivo es apilar las cartas de la baraja en orden ascendente o descendente. ¡Asegúrate de seguir siempre con el color opuesto y diviértete!</p>
+                                    </div>
+                                    <img src="images/CARTAS/Solitario.jpg" alt="Solitario" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Spider</h3>
+                                        <hr class="card-hr">
+                                        <p>Para empezar a jugar, hay que saber que consta de 104 cartas y consiste en apilar las de menor valor sobre las más grandes. Las filas se forman con cartas del mismo palo y deben estar repartidas en 19 columnas y habrá algunas dadas vueltas que se irán descubriendo a medida que progrese el juego.</p>
+                                    </div>
+                                    <img src="images/CARTAS/spider.jpg" alt="Spider" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Uno</h3>
+                                        <hr class="card-hr">
+                                        <p>Se reparten 7 cartas a cada jugador y ganará la ronda el primero que consiga deshacerse de todas antes que el resto. Estas cartas están numeradas del 1 al 9 y son de 4 colores diferentes.</p>
+                                    </div>
+                                    <img src="images/CARTAS/Uno.jpg" alt="Uno" class="img">
+                                </div>
+                                <button class="btn btn-agregado">Agregado</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Monopoly</h3>
+                                        <hr class="card-hr">
+                                        <p>El objetivo del juego es formar un monopolio de oferta, poseyendo todas las propiedades inmuebles que aparecen en el juego.</p>
+                                    </div>
+                                    <img src="images/CARTAS/Monopoly.jpg" alt="Monopoly" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Truco</h3>
+                                        <hr class="card-hr">
+                                        <p>Para ganar se deben sumar una cantidad determinada de puntos, a veces se dividen en etapas.</p>
+                                    </div>
+                                    <img src="images/CARTAS/Truco.jpg" alt="Truco" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Poker</h3>
+                                        <hr class="card-hr">
+                                        <p>Es un juego de apuestas en el que los jugadores, con todas o parte de sus cartas ocultas, hacen apuestas sobre una puja inicial, recayendo la suma total de las apuestas en el jugador o jugadores con la mejor combinación de cartas</p>
+                                    </div>
+                                    <img src="images/CARTAS/Poker.jpg" alt="Poker" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Duo con amigos</h3>
+                                        <hr class="card-hr">
+                                        <p>DUO con amigos es una variación avanzada del clásico UNO, con nuevos torneos, reglas, modos de juego, cartas especiales y mucho más. A diferencia del UNO clásico, DUO With Friends permite que haya espacio para hasta 8 jugadores en una partida online.</p>
+                                    </div>
+                                    <img src="images/CARTAS/duo.jpg" alt="Duo" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Pyramid Solitaire Blue</h3>
+                                        <hr class="card-hr">
+                                        <p>Pyramid Solitaire Blue trae la popular versión Pyramid del Solitario a la palma de tu mano. Pyramid Solitaire Blue garantiza diversión y estimulación mental durante horas. Combinado con los gráficos altamente pulidos por los que son conocidos los juegos de Solitario de Softgames, ¡este es un juego imprescindible para todos los jugadores de Solitario!</p>
+                                    </div>
+                                    <img src="images/CARTAS/pyramid-solitaire.jpg" alt="Pyramid Solitaire Blue" class="img">
+                                </div>
+                                <button class="btn btn-agregado">Agregado</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carrousel-arrow arrow-prev" id="prev-1">
+                        <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                    </div>
+                    <div class="carrousel-arrow arrow-next" id="next-1">
+                        <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                    </div>
+                </div>
+    
+                <h3 class="category">Carreras</h3>
+                <div class="carrousel" id="carrousel-2">
+                    <div class="carrousel-cards" id="carrousel-cards">
+                        <div class="carrousel-track" id="track-2">
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Streetrace Fury</h3>
+                                        <hr class="card-hr">
+                                        <p>Trata de cruzar la línea de meta dejando atrás a tu rival. Para ello, saca a relucir tu experiencia y habilidades para conducir muy rápido y demostrar tu valía como conductor. Forma un buen equipo y prepárate para competir en emocionantes carreras de coches callejeras para ganar dinero.</p>
+                                    </div>
+                                    <img src="images/CARRERAS/streetrace-fury.jpg" alt="streetrace-fury" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Super Bikes</h3>
+                                        <hr class="card-hr">
+                                        <p>Super Bikes es un juego de carreras para PC totalmente gratuito. Si te gustan las motos y eres aficionado a las carreras, este juego no puede faltar en tu ordenador. Puedes practicar todo cuanto quieras en el modo de Carrera Individual o competir para obtener el mejor resultado en el modo Ataque de Tiempo.</p>
+                                    </div>
+                                    <img src="images/CARRERAS/carrerasdemotos.jpg" alt="Carreras de motos" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Real cars</h3>
+                                        <hr class="card-hr">
+                                        <p>Real Cars es un juego de simulación en 3D en el que debes demostrar tus habilidades de conducción en varias pistas de carreras únicas. Enfréntate a la inteligencia artificial o a tus amigos y recoge estrellas por completar carreras con éxito.</p>
+                                    </div>
+                                    <img src="images/CARRERAS/Real cars.jpg" alt="Real cars" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Racing Master</h3>
+                                        <hr class="card-hr">
+                                        <p>NetEase y Codemasters se asociaron para crear un juego de carreras que goza de gran realismo. A través de espectaculares gráficos en 3D, Racing Master te adentra en el interior de relucientes coches para probar a fondo el potencial de cada motor. El juego dispone de un gran número de circuitos que exigen un buen nivel de conducción para superar cada curva. Además, desde el menú principal es posible acceder a un taller en el que exprimir al máximo las cualidades mecánicas de cada vehículo. Marcas como Ferrari, Porsche, Aston Martin o Lamborghini te están esperando.</p>
+                                    </div>
+                                    <img src="images/CARRERAS/Racing-Master.jpg" alt="Racing Master" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Rally</h3>
+                                        <hr class="card-hr">
+                                        <p>Afronta los desafíos del simulador de rallies más completo, realista y exigente que se haya desarrollado nunca. Sumérgete de lleno en la acción y pilota los coches del campeonato del WRC 2022, incluyendo los nuevos modelos híbridos.</p>
+                                    </div>
+                                    <img src="images/CARRERAS/Rally.jpg" alt="Rally" class="img">
+                                </div>
+                                <button class="btn btn-agregado">Agregado</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Doraemon Dream Car</h3>
+                                        <hr class="card-hr">
+                                        <p>Doraemon Dream Car es un juego de conducción en tres dimensiones al más puro estilo Mario Kart o Sonic Racing, en el que podremos ponernos al volante de multitud de vehículos distintos, con personajes del popular anime Doraemon. Podremos controlar a Nobita, Shizuka, Suneo, Gigante o el propio Doraemon.</p>
+                                    </div>
+                                    <img src="images/CARRERAS/doraemon.jpg" alt="Doraemon Dream Car" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Reversed</h3>
+                                        <hr class="card-hr">
+                                        <p>Para ganar se deben sumar una cantidad determinada de puntos, a veces se dividen en etapas.</p>
+                                    </div>
+                                    <img src="images/CARRERAS/Reversed.jpg" alt="Reversed" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Disney Speedstorm</h3>
+                                        <hr class="card-hr">
+                                        <p>Disney Speedstorm es el juego definitivo de carreras en circuitos de alta velocidad inspirados en los mundos de Disney y Pixar. Es una trepidante experiencia de carreras arcade en la que los jugadores deberán dominar las habilidades únicas de los personajes en la pista para obtener la victoria.</p>
+                                    </div>
+                                    <img src="images/CARRERAS/Speedstorm.jpg" alt="Disney Speedstorm" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Offroad</h3>
+                                        <hr class="card-hr">
+                                        <p>Caos todoterreno loco y total: ¡el mejor simulador de conducción todoterreno que existe! ¡Conduce 4x4, coches de rally, buggies, camionetas y camiones monstruo a través de locos circuitos todoterreno!</p>
+                                    </div>
+                                    <img src="images/CARRERAS/Offroad.jpg" alt="Offroad" class="img">
+                                </div>
+                                <button class="btn btn-agregado">Agregado</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carrousel-arrow arrow-prev" id="prev-2">
+                        <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                    </div>
+                    <div class="carrousel-arrow arrow-next" id="next-2">
+                        <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                    </div>
+                </div>
+                
+                <h3 class="category">Clásicos</h3>
+                <div class="carrousel">
+                    <div class="carrousel-cards">
+                        <div class="carrousel-track">
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>4 en linea</h3>
+                                        <hr class="card-hr">
+                                        <p>El objetivo del juego es conectar cuatro fichas de tu personaje en la misma línea (vertical, horizontal o diagonal). Las fichas o discos siempre caen desde arriba a abajo como consecuencia de la fuerza de la gravedad. Conecta 4 fichas en línea y ganarás la partida!</p>
+                                    </div>
+                                    <img src="images/CLASICOS/4enlinea.jpg" alt="4enlinea" class="img">
+                                </div>
+                                <a href="juego.html"><button class="btn btn-jugar">Jugar</button></a>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Mario Bros</h3>
+                                        <hr class="card-hr">
+                                        <p>El héroe principal del Reino Champiñón. Mario es muy positivo y siempre está alegre. Lo podrás reconocer por sus overoles de color azul, su gorra roja y su característico bigote. La princesa Peach lo considera su amigo de confianza, y todo el mundo los conoce a él y a su hermano Luigi por sus actos de valentía.</p>
+                                    </div>
+                                    <img src="images/CLASICOS/mario-bros.jpg" alt="Mario Bros" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Duck Hunt</h3>
+                                        <hr class="card-hr">
+                                        <p>El primer juego de Nintendo de pistolitas, seguro que no os acordabais de él, venga todos a matar patos.</p>
+                                    </div>
+                                    <img src="images/CLASICOS/duckhunt.jpg" alt="Duck Hunt" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Circus Charlie </h3>
+                                        <hr class="card-hr">
+                                        <p>Circus Charlie es un juego de plataformas en donde el jugador debe guiar a la estrella circense Circus Charlie a través de seis eventos propios de un circo. El público entra al circo una vez iniciado el juego. Con cada error, Charlie pierde una vida.</p>
+                                    </div>
+                                    <img src="images/CLASICOS/circus-charlie.jpg" alt="Circus Charlie" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Mickey Mouse</h3>
+                                        <hr class="card-hr">
+                                        <p>Mickey Mouse es un juego de plataformas en donde el jugador debe guiar a la estrella circense Mickey Mouse a través de seis eventos propios de un circo. El público entra al circo una vez iniciado el juego. Con cada error, Mickey pierde una vida.</p>
+                                    </div>
+                                    <img src="images/CLASICOS/mickymouse.jpg" alt="Mickey Mouse" class="img">
+                                </div>
+                                <button class="btn btn-agregado">Agregado</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Pac Man</h3>
+                                        <hr class="card-hr">
+                                        <p>El juego consiste en conducir a Pac-Man, una bola amarilla que abre y cierra la boca, por un laberinto. Suma puntos cuando come aquello que encuentra a su paso, bolitas y diferentes frutas, pero debe esquivar a cuatro fantasmas.</p>
+                                    </div>
+                                    <img src="images/CLASICOS/pac-man.jpg" alt="Pac Man" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Plants vs Zombies</h3>
+                                        <hr class="card-hr">
+                                        <p>El jugador va disponiendo diferentes plantas mutantes con distintas características de ataque o defensa en tres lugares diferentes de la casa (jardín delantero, jardín trasero/piscina y tejado) para detener a la horda de zombis que intenta devorar los cerebros de los residentes.</p>
+                                    </div>
+                                    <img src="images/CLASICOS/plantsvszombies.jpg" alt="plants vs zombies" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Snake</h3>
+                                        <hr class="card-hr">
+                                        <p></p>
+                                    </div>
+                                    <img src="images/CLASICOS/snake.jpg" alt="snake" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carrousel-arrow arrow-prev">
+                        <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                    </div>
+                    <div class="carrousel-arrow arrow-next">
+                        <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                    </div>
+                </div>
+                
+                <h3 class="category">Deportes</h3>
+                <div class="carrousel">
+                    <div class="carrousel-cards">
+                        <div class="carrousel-track">
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Billar</h3>
+                                        <hr class="card-hr">
+                                        <p>El billar es un deporte de precisión que se practica impulsando con un taco un número variable de bolas (antiguamente de marfil), en una mesa con tablero de pizarra forrada de paño, bordeada con bandas de material elástico y con troneras o sin ellas.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/billar.jpg" alt="billar" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Basketball Stars</h3>
+                                        <hr class="card-hr">
+                                        <p>Basketball Stars es un juego de baloncesto en línea donde los jugadores compiten uno contra uno en partidos de baloncesto. Instrucciones para jugar: - Usa el clic del mouse para atacar y las flechas arriba, abajo izquierda y derecha para moverte.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/basketball-stars.jpg" alt="basketball-stars" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Crazy Tennis</h3>
+                                        <hr class="card-hr">
+                                        <p>Intenta ganar cada partido en este salvaje juego de tenis en línea. Intenta derrotar a cada oponente devolviendo las bolas con precisión. Derrota a los retadores de monstruos alienígenas para que puedas llevar a casa la copa del mundo por la tierra.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/crazytennis.jpg" alt="Crazy Tennis" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Basketball</h3>
+                                        <hr class="card-hr">
+                                        <p>Basketball se juega con dos equipos de cinco personas, durante 4 períodos o cuartos de 10 minutos (FIBA) 4 o 12 (NBA) minutos cada uno. Al finalizar el segundo cuarto, se realiza un descanso, normalmente de 15 a 20 minutos según la reglamentación propia del campeonato al cual el partido pertenezca.
+                                        </p>
+                                    </div>
+                                    <img src="images/DEPORTE/basketball.jpg" alt="basketball" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Penalty</h3>
+                                        <hr class="card-hr">
+                                        <p>Cuando un jugador comete una infracción o una falta dentro de su propia área penal mientras el balón está en juego podrá ser sancionado por el arbitro, el cual concederá un tiro a puerta al equipo contrario. A esta dura sanción se la denomina penalti.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/penalty.jpg" alt="penalty" class="img">
+                                </div>
+                                <button class="btn btn-agregado">Agregado</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Real football</h3>
+                                        <hr class="card-hr">
+                                        <p>Juega en estadios en 3D en los que las sombras depuradas, las texturas detalladas y los espectadores se unen para generar un ambiente emocionante. Múltiples vistas de cámara durante las cinemáticas y las escenas para hacer la retransmisión más elaborada y tener la sensación de vivirlo en primera persona.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/realfootball.jpg" alt="Real football" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Volleyball Arena</h3>
+                                        <hr class="card-hr">
+                                        <p>Es un juego fácil de aprender para jugadores ocasionales, con diversas habilidades para aquellos que buscan algo más, con potenciadores y una mecánica y dinámicas basadas en los principios reales de la física. ¡Volea, remata y anota! Usa las manos, la cabeza y los superpoderes para anotar puntos.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/volleyballarena.jpg" alt="volleyball arena" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carrousel-arrow arrow-prev">
+                        <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                    </div>
+                    <div class="carrousel-arrow arrow-next">
+                        <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                    </div>
+                </div>
+                
+                <h3 class="category">Educativos</h3>
+                <div class="carrousel">
+                    <div class="carrousel-cards">
+                        <div class="carrousel-track">
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Juego Suma</h3>
+                                        <hr class="card-hr">
+                                        <p>Un juego de suma cero es un proceso donde las ganancias acumuladas de todos los participantes es igual a la sumatoria de las pérdidas. Este concepto lo encontramos en el ámbito de la teoría de juegos, una rama de la microeconomía que estudia la interdependencia entre las decisiones de diferentes individuos.</p>
+                                    </div>
+                                    <img src="images/EDUCATIVOS/Juego Suma.jpg" alt="Juego Suma" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Juego Geo</h3>
+                                        <hr class="card-hr">
+                                        <p>Juego Geo es un juego de baloncesto en línea donde los jugadores compiten uno contra uno en partidos de baloncesto. Instrucciones para jugar: - Usa el clic del mouse para atacar y las flechas arriba, abajo izquierda y derecha para moverte.</p>
+                                    </div>
+                                    <img src="images/EDUCATIVOS/juegoGeo.jpg" alt="Juego Geo" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Juego Geografia</h3>
+                                        <hr class="card-hr">
+                                        <p>Juego Geografia intenta ganar cada partido en este salvaje juego de tenis en línea. Intenta derrotar a cada oponente devolviendo las bolas con precisión. Derrota a los retadores de monstruos alienígenas para que puedas llevar a casa la copa del mundo por la tierra.</p>
+                                    </div>
+                                    <img src="images/EDUCATIVOS/juegoGeografia.jpg" alt="Juego Geografia" class="img">
+                                </div>
+                                <button class="btn btn-jugar">Jugar</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Olimpia</h3>
+                                        <hr class="card-hr">
+                                        <p>Olimpia se juega con dos equipos de cinco personas, durante 4 períodos o cuartos de 10 minutos (FIBA) 4 o 12 (NBA) minutos cada uno. Al finalizar el segundo cuarto, se realiza un descanso, normalmente de 15 a 20 minutos según la reglamentación propia del campeonato al cual el partido pertenezca.
+                                        </p>
+                                    </div>
+                                    <img src="images/EDUCATIVOS/Olimpia.jpg" alt="Olimpia" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Penalty</h3>
+                                        <hr class="card-hr">
+                                        <p>Cuando un jugador comete una infracción o una falta dentro de su propia área penal mientras el balón está en juego podrá ser sancionado por el arbitro, el cual concederá un tiro a puerta al equipo contrario. A esta dura sanción se la denomina penalti.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/penalty.jpg" alt="penalty" class="img">
+                                </div>
+                                <button class="btn btn-agregado">Agregado</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Real football</h3>
+                                        <hr class="card-hr">
+                                        <p>Juega en estadios en 3D en los que las sombras depuradas, las texturas detalladas y los espectadores se unen para generar un ambiente emocionante. Múltiples vistas de cámara durante las cinemáticas y las escenas para hacer la retransmisión más elaborada y tener la sensación de vivirlo en primera persona.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/realfootball.jpg" alt="Real football" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                            <div class="card">
+                                <div class="card-img">
+                                    <div class="card-hover">
+                                        <h3>Volleyball Arena</h3>
+                                        <hr class="card-hr">
+                                        <p>Es un juego fácil de aprender para jugadores ocasionales, con diversas habilidades para aquellos que buscan algo más, con potenciadores y una mecánica y dinámicas basadas en los principios reales de la física. ¡Volea, remata y anota! Usa las manos, la cabeza y los superpoderes para anotar puntos.</p>
+                                    </div>
+                                    <img src="images/DEPORTE/volleyballarena.jpg" alt="volleyball arena" class="img">
+                                </div>
+                                <button class="btn btn-agregar">
+                                    <div class="btn-agregar-icono">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </div>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carrousel-arrow arrow-prev">
+                        <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                    </div>
+                    <div class="carrousel-arrow arrow-next">
+                        <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                    </div>
+                </div>
+    
+                <h3 class="category">Estrategia</h3>
+                <div class="categoria"></div>
+                
+                <h3 class="category">Memoria</h3>
+                <div></div>
+            </div>
+    
+        </div>
+        <footer class="footer-content">
+            <div>
+                <img src="./images/logo.png" alt="Logo" class="logo">
+            </div>
+            <div class="footer-content-info">
+                <div class="footer-content-info-columns">
+                    <p>¡Tenemos cientos de juegos online para que juegues con tus personajes favoritos en cualquier momento!</p>
+                    <p>Descubre aquí todos los juegos de acción, cartas, carreras, clásicos, deportes, educativos, estratégia y memoria, para niños y niñas.</p>
+                    <p>Con tantos juegos siempre tendrás con qué divertirte y a alguien con quien jugar.</p>
+                    <p>Invita a tus amigos y diviértete con ellos.</p>    
+                </div>
+                <div class="footer-content-info-columns">
+                    <h3>Información</h3>
+                    <a href="">Nuestra Historia</a>
+                    <a href="">Categorías de juegos</a>
+                    <a href="">Preguntas frecuentes</a>
+                    <a href="">Términos de pago</a>
+                </div>
+                <div class="footer-content-info-columns">
+                    <h3>Legales</h3>
+                    <a href="">Terminos y Condiciones</a>
+                    <a href="">Politica de privacidad</a>
+                    <a href="">Seguridad</a>
+                    <a href="">Ley de Cookies</a>
+                    <a href="">Aviso legal</a>
+                </div>
+                <div class="footer-content-info-columns">
+                    <h3>Contacto</h3>
+                    <a href="">Desarrolladores</a>
+                    <p>Síguenos a través de nuestras redes:</p>
+                    <div>
+                        <a href="https://twitter.com/home?lang=es" class="icon-network"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/?locale=es_LA"  class="icon-network facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M16.288 9.428A4.999 4.999 0 0 0 7 12a4.999 4.999 0 0 0 9.288 2.572l-1.715-1.028A3 3 0 1 1 12 9c1.093 0 2.05.584 2.573 1.457l1.715-1.03ZM22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10s10-4.48 10-10ZM4 12c0-4.42 3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8s-8-3.58-8-8Z"/></svg>
+                <p> 2023 Juegos.com. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/carrousels.js"></script>
+    <script src="js/loading.js"></script>
+</body>
+</html> 

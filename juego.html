@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Juego</title>
+</head>
+<body>
+    <div>
+        <nav>
+            <div class="dropdown">
+                <a type="button" class="btn-dropdown dropdown-menu" id="btn-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <ol class="dropdown-content dropdown-content-menu" id="dropdown-content-menu">
+                    <li> 
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>Recomendados</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Accion" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-fire"></i>
+                            </div>
+                            <p>Acción</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Cartas" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-diamond"></i>
+                            </div>
+                            <p>Cartas</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Carreras" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-flag-checkered"></i>
+                            </div>
+                            <p>Carreras</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Clasicos" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-ghost"></i>
+                            </div>
+                            <p>Clásicos</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Deportes" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-volleyball"></i>
+                            </div>
+                            <p>Deportes</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="Educativos" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <p>Educativos</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="Estrategia" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-chess-knight"></i>
+                            </div>
+                            <p>Estrategia</p>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#Memoria" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-brain"></i>  
+                            </div>
+                            <p>Memoria</p>
+                        </a>
+                    </li>
+                    <hr class="hr-nav">
+                    <li> 
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <p>Contactanos</p>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <img src="./images/logo.png" alt="Logo" class="logo">
+            <div class="dropdown">
+                <a type="button" class="btn-dropdown" id="btn-avatar">
+                    <img src="images/AVATARS/avatar1.png" alt="Avatar usuario" class="avatar">
+                </a>
+                <ol class="dropdown-content dropdown-content-avatar" id="dropdown-content-avatar">
+                    <li> 
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <p>Mi pefil</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-pencil"></i>
+                            </div>
+                            <p>Editar perfil</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </div>
+                            <p>Mi carrito</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <p>Mis favoritos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-gear"></i>
+                            </div>
+                            <p>Configuración de cuenta</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com.ar/?hl=es" rel="noopener">
+                            <div>
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </div>
+                            <p>Cerrar sesión</p>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- breadcrums -->
+            <div class="breadcrums">
+                <a href="home.html">Home ></a>
+                <p>4 en linea</p>
+            </div>
+            <!-- espacio de juego -->
+            <canvas id="canvas" width="1200" height="600"></canvas>
+            <!-- slider de juego -->
+            <div class="slider-juego">
+                <ul class="slide-track-juego">
+                    <li class="slide-juego"><img src="images/4 EN LINEA/burro-de-shrek.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/burro-sheck~3.png" alt="" class="img-ficha"></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/burrovsgato.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/gato2.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/gato~3.jpeg" alt="" class="img-ficha"></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/juego-principal.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/shrek.jpg" alt=""></li>
+        
+                    <!-- mismas slides -->
+                    <li class="slide-juego"><img src="images/4 EN LINEA/burro-de-shrek.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/burro-sheck~3.png" alt="" class="img-ficha"></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/burrovsgato.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/gato2.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/gato~3.jpeg" alt="" class="img-ficha"></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/juego-principal.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/4 EN LINEA/shrek.jpg" alt=""></li>
+                </ul>
+            </div>
+            <!-- Instrucciones, comentarios y publicidades -->
+            <div class="contenido-publicidades">
+                <div class="contenido">
+                    <div class="instrucciones">
+                        <h2>4 en linea: Burro vs Gato - Shrek</h2>
+                        <p>Las normas del cuatro en línea son muy sencillas. Se juega siempre entre 2 jugadores y sobre un tablero de 7x6 casillas. En cada turno cada jugador coloca una ficha de su personaje en una columna y esta cae hasta la primera casilla disponible. El que consigue ubicar 4 fichas del mismo personaje seguidas en horizontal, vertical u oblicuo gana. Si nadie lo consigue la partida termina en empate.</p>
+                        <h3>Comandos para jugar</h3>
+                        <hr class="card-hr">
+                        <div>
+                            <div class="instrucciones-flechas">
+                                <p>Utilizar las flechas del teclado (izquierda y derecha), para elegir la columna en la que quieres que caiga la ficha.</p>
+                                <i class="fa-solid fa-left-long fa-2xl"></i>
+                                <i class="fa-solid fa-right-long fa-2xl"></i>
+                            </div>
+                            <div class="instrucciones-juego-flechas">
+                                <p>Una vez elegida la columna, soltar la ficha presionando el enter.</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><mask id="ipSEnterKey0"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path fill="#fff" stroke="#fff" d="M44 44V4H24v16H4v24h40Z"/><path stroke="#000" d="m21 28l-4 4l4 4"/><path stroke="#000" d="M34 23v9H17"/></g></mask><path fill="#679cea" d="M0 0h48v48H0z" mask="url(#ipSEnterKey0)"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenido-comentarios">
+                        <div>
+                            <h3>Comentarios</h3>
+                            <div class="comentario">
+                                <div class="avatar">
+                                    <img src="images/AVATARS/avatar1.png" alt="Avatar usuario">
+                                </div>
+                                <textarea name="comment" id="" cols="80" rows="5" placeholder="Añade un comentario "></textarea>
+                                <a class="btn-enviar-msg">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3>Comentarios anteriores</h3>
+                            <div class="comentario">
+                                <div class="avatar">
+                                    <img src="images/AVATARS/avatar2.png" alt="Avatar">
+                                </div>
+                                <div class="comentario-cuadro">
+                                    <div class="comentario-cuadro-text">
+                                        <h3>albertogigas</h3>
+                                        <hr class="card-hr">
+                                        <p>Me encanta este juego porque es de la maravilla del mundo mundial</p>
+                                    </div>
+                                    <div class="comentario-cuadro-like">
+                                        <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                        <span><b>23</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comentario">
+                                <div class="avatar">
+                                    <img src="images/AVATARS/avatar3.png" alt="Avatar">
+                                </div>
+                                <div class="comentario-cuadro">
+                                    <div class="comentario-cuadro-text">
+                                        <h3>gracielabytes</h3>
+                                        <hr class="card-hr">
+                                        <p>Una pregunta cuando se gana una partida en la próxima tira primero el que ganó la ocasión anterior o también es a suerte</p>
+                                    </div>
+                                    <div class="comentario-cuadro-like">
+                                        <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                        <span><b>12</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comentario">
+                                <div class="avatar">
+                                    <img src="images/AVATARS/avatar4.png" alt="Avatar">
+                                </div>
+                                <div class="comentario-cuadro">
+                                    <div class="comentario-cuadro-text">
+                                        <h3>megaelsa</h3>
+                                        <hr class="card-hr">
+                                        <p>Y si se llena el tablero y nadie forma la línea de 4?</p>
+                                    </div>
+                                    <div class="comentario-cuadro-like">
+                                        <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                        <span><b>55</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside>
+                    <div>
+                        <img src="images/ANUNCIOS PUBLICITARIOS/publi coca.jpg" alt="Publicidad coca-cola">
+                        <p class="p-anuncio">anuncio</p>
+                    </div>
+                    <div>
+                        <img src="images/ANUNCIOS PUBLICITARIOS/doritos.jpg" alt="Publicidad Doritos">
+                        <p class="p-anuncio">anuncio</p>
+                    </div>
+                    <div>
+                        <img src="images/ANUNCIOS PUBLICITARIOS/McDonald.jpg" alt="Publicidad McDonald">
+                        <p class="p-anuncio">anuncio</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        
+
+        <footer class="footer-content">
+            <div>
+                <img src="./images/logo.png" alt="Logo" class="logo">
+            </div>
+            <div class="footer-content-info">
+                <div class="footer-content-info-columns">
+                    <p>¡Tenemos cientos de juegos online para que juegues con tus personajes favoritos en cualquier momento!</p>
+                    <p>Descubre aquí todos los juegos de acción, cartas, carreras, clásicos, deportes, educativos, estratégia y memoria, para niños y niñas.</p>
+                    <p>Con tantos juegos siempre tendrás con qué divertirte y a alguien con quien jugar.</p>
+                    <p>Invita a tus amigos y diviértete con ellos.</p>    
+                </div>
+                <div class="footer-content-info-columns">
+                    <h3>Información</h3>
+                    <a href="">Nuestra Historia</a>
+                    <a href="">Categorías de juegos</a>
+                    <a href="">Preguntas frecuentes</a>
+                    <a href="">Términos de pago</a>
+                </div>
+                <div class="footer-content-info-columns">
+                    <h3>Legales</h3>
+                    <a href="">Terminos y Condiciones</a>
+                    <a href="">Politica de privacidad</a>
+                    <a href="">Seguridad</a>
+                    <a href="">Ley de Cookies</a>
+                    <a href="">Aviso legal</a>
+                </div>
+                <div class="footer-content-info-columns">
+                    <h3>Contacto</h3>
+                    <a href="">Desarrolladores</a>
+                    <p>Síguenos a través de nuestras redes:</p>
+                    <div>
+                        <a href="https://twitter.com/home?lang=es" class="icon-network"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/?locale=es_LA"  class="icon-network facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M16.288 9.428A4.999 4.999 0 0 0 7 12a4.999 4.999 0 0 0 9.288 2.572l-1.715-1.028A3 3 0 1 1 12 9c1.093 0 2.05.584 2.573 1.457l1.715-1.03ZM22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10s10-4.48 10-10ZM4 12c0-4.42 3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8s-8-3.58-8-8Z"/></svg>
+                <p> 2023 Juegos.com. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/juego/Figure.js"></script>
+	<script src="js/juego/Circle.js"></script>
+	<script src="js/juego/Rect.js"></script>
+	<script src="js/juego/Tablero.js"></script>
+	<script src="js/juego/Juego.js"></script>
+	<script src="js/juego/Jugador.js"></script>
+    <script src="js/juego/main.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
