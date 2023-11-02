@@ -1,5 +1,5 @@
 class Tablero{
-    constructor(img, filas, cols, ctx, canvasW){
+    constructor(img, filas, cols, ctx){
         this.img = img;
         this.filas = filas;
         this.cols = cols;
@@ -7,8 +7,7 @@ class Tablero{
         this.wT = 525;
         this.hT = 450;
         this.padding = 10;
-        this.canvasW = canvasW;
-        this.posX_inicial = (this.canvasW - this.wT)/2; //337.5
+        this.posX_inicial = (CANVAS_WIDTH - this.wT)/2; //337.5
         this.posX_final = this.posX_inicial + this.wT;
         this.posY_inicial = 115;
         this.posY_final= this.posY_inicial + this.hT;
@@ -17,8 +16,6 @@ class Tablero{
         this.board = new Array();
         this.aux = new Array();
     }
-
-    //HACER UNA COPIA DE LA MATRIZ 
 
     initializeBoard() {
         for (let col = 0; col < this.cols; col++) {
@@ -59,25 +56,9 @@ class Tablero{
         }
     }
 
-    setAuxPos(col, row){
-        this.aux[col][row] = 1;
-    }
-
-    getAux(col, row){
-        return this.aux[col][row];
-    }
-
-    getPosX(col, row){
-        return this.board[col][row].x;
-    }
-
-    getPosY(col, row){
-        return this.board[col][row].y;
-    }    
-    
-    ocuppy(col, row){
-        this.setAuxPos(col, row);
-        this.board[col][row].busy = 1; //si tiró el jugador 1
+    ocuppy(col, row, player){
+        this.setAuxPos(col, row, player);
+        this.board[col][row].busy = player; // Va a ser 1 o 2 depende que jugador haya tirado
     }
     
     isBusy(col, row){
@@ -99,28 +80,143 @@ class Tablero{
     }
 
     isInsideTheBoard(x, y){
-        if(x > this.posX_inicial && x < this.posX_final && y > this.posY_inicial){
+        if(x > this.posX_inicial && x < this.posX_final && y > this.posY_inicial && y < this.posY_final){
             return true;
         } else {
             return false;
         }
     }
 
+    setAuxPos(col, row, player){
+        this.aux[col][row] = player;
+    }
+
+    checkForWin(col, row) {
+        if(this.checkHorizontalWin(col, row) ||
+            this.checkVerticalWin(col, row) ||
+            this.checkDiagonalWin1(col, row) ||
+            this.checkDiagonalWin2(col, row)
+        ) {
+            return true;
+        }
+        return false;
+    }
     
+    checkHorizontalWin(col, row) {
+        const player = this.board[col][row].busy;
+        let count = 1;
     
+        // Verifica hacia la izquierda
+        for (let c = col - 1; c >= 0; c--) {
+            if (this.board[c][row].busy === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+    
+        // Verifica hacia la derecha
+        for (let c = col + 1; c < this.cols; c++) {
+            if (this.board[c][row].busy === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        console.log(count);
+        return count >= 4;
+    }
+    
+    checkVerticalWin(col, row) {
+        const player = this.board[col][row].busy;
+        let count = 1;
+    
+        // Verifica hacia arriba
+        for (let r = row - 1; r >= 0; r--) {
+            if (this.board[col][r].busy === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+    
+        // Verifica hacia abajo
+        for (let r = row + 1; r < this.filas; r++) {
+            if (this.board[col][r].busy === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        console.log(count);
+        return count >= 4;
+    }
+    
+    checkDiagonalWin1(col, row) {
+        const player = this.board[col][row].busy;
+        let count = 1; 
+    
+        // Verifica diagonal superior izquierda
+        for (let r = row - 1, c = col - 1; r >= 0 && c >= 0; r--, c--) {
+            if (this.board[c][r].busy === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+    
+        // Verifica diagonal inferior derecha
+        for (let r = row + 1, c = col + 1; r < this.filas && c < this.cols; r++, c++) {
+            if (this.board[c][r].busy === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        console.log(count);
+        return count >= 4;
+    }
+    
+    checkDiagonalWin2(col, row) {
+        const player = this.board[col][row].busy;
+        let count = 1; 
+    
+        // Verifica diagonal superior derecha
+        for (let r = row - 1, c = col + 1; r >= 0 && c < this.cols; r--, c++) {
+            if (this.board[c][r].busy === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+    
+        // Verifica diagonal inferior izquierda
+        for (let r = row + 1, c = col - 1; r < this.filas && c >= 0; r++, c--) {
+            if (this.board[c][r].busy === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        console.log(count);
+        return count >= 4;
+    }
 
-//     posEnYDeMatriz(col, row){
-//         return this.matrizPosY[col][row];
-//     }
+    getAuxPos(col, row){
+        return this.aux[col][row];
+    }
 
-//     // isFree(row, col){
-//     //     if(this.matriz[row][col] === 0){
-//     //         return true;
-//     //     }else{
-//     //         return false;
-//     //     }
-//     // }
+    getAux(){
+        return new Array(this.aux);
+    }
 
+    getPosX(col, row){
+        return this.board[col][row].x;
+    }
+
+    getPosY(col, row){
+        return this.board[col][row].y;
+    }    
 
     getRadius(){
         return this.radius;
@@ -148,10 +244,6 @@ class Tablero{
 
     getPadding(){
         return this.padding;
-    }
-
-    getSquares(){
-        return new Array(this.squares);
     }
 
 }

@@ -28,11 +28,9 @@ class Circle extends Figure{
             this.ctx.restore();
         } 
         else {
-            let x = this.posX + this.radius + (PADDING/2);
-            let y = this.posY + this.radius + (PADDING/2);
             this.ctx.fillStyle = "white";
             this.ctx.beginPath();
-            this.ctx.arc(x, y, this.radius, 0, 2 * Math.PI); 
+            this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI); 
             this.ctx.fill();
             this.ctx.closePath();
         }

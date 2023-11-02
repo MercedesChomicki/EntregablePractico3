@@ -1,14 +1,13 @@
 let canvas = document.getElementById("canvas");
 CanvasRenderingContext2D;
 let ctx = canvas.getContext("2d"); 
-let canvasWidth = canvas.width;
-let canvasHeight = canvas.height;
 
-const MARGIN_LEFT_CANVAS = 80,
+const CANVAS_WIDTH = canvas.width,
+      CANVAS_HEIGHT = canvas.height,
+      MARGIN_LEFT_CANVAS = 80,
       MARGIN_TOP_CANVAS = 50,
       PLAYER_1 = 1,
-      PLAYER_2 = 2,
-      PADDING = 10;
+      PLAYER_2 = 2;
 
 let img1 = new Image();
 img1.src = 'images/juego/gato.png';
@@ -20,12 +19,12 @@ let imgBoard = new Image();
 imgBoard.src = 'images/juego/fondo.jpg';
 
 ctx.fillStyle = "black";
-let fillRect = ctx.fillRect(10, 0, canvasWidth, canvasHeight);
+let fillRect = ctx.fillRect(10, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
 let filas = 6, //suponiendo que el usuario haya elegido "4 en linea"
     cols = 7;
     
-let juego = new Juego(img1, img2, imgBoard, filas, cols, canvasWidth, canvasHeight, ctx);
+let juego = new Juego(img1, img2, imgBoard, filas, cols, ctx);
     
     
 function drawGame(){
