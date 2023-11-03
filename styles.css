@@ -846,9 +846,87 @@ nav{
     .breadcrums p{
         color: var(--white);
     }
+
+    
+    .container-popup3{
+        display: flex;
+    }
+
+    .container-popup4{
+        display: none;
+    }
+
+    .container-popup3, .container-popup4{
+        width: 89%;
+        height: 600px;
+        position: absolute;
+        margin-left: 80px;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(22, 22, 22, 0.643);
+    }
+
+    .popup3{
+        display: flex;
+    }
+
+    .popup4{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .popup3, .popup4{
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 400px;
+        text-wrap: wrap;
+        background-color: var(--primary-s1);
+        background: rgb(227,134,247);
+        background: linear-gradient(240deg, rgb(115, 0, 141) 0%, rgb(219, 88, 245) 0%, rgba(227,134,247,1) 51%, rgba(221,98,247,1) 73%, rgba(196,23,232,1) 100%);
+        border-radius: 10%;
+    }
+
+    .popup3 button, .popup4 button{
+        background-color: var(--secondary);
+        width: 40%;
+        height: 20%;
+    }
+    .popup3 button:hover{
+        background-color: var(--secondary-l1);
+    }
+
+    .popup4 h3{
+        margin-bottom: 20px;
+    }
     
     #canvas{
         margin-left: 80px;
+    }
+
+    .container-timer{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+    
+    .timer{
+        width: 88.9%;
+        height: 100%;
+        background-color: rgb(57, 57, 57);
+        background-color: var(--black);
+        /* background-color: var(--secondary); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-h2);
+        font-weight: bolder;
+        font-size: var(--font-size-h3);
+        color: var(--white);
+        margin-left: 10px;
     }
   
     .slider-juego{

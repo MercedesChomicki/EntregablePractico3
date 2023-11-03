@@ -1,15 +1,16 @@
 class Tablero{
-    constructor(img, filas, cols, ctx){
+    constructor(img, filas, cols, ctx, canvasWidth){
         this.img = img;
         this.filas = filas;
         this.cols = cols;
         this.ctx = ctx;
+        this.canvasWidth = canvasWidth;
         this.wT = 525;
         this.hT = 450;
         this.padding = 10;
-        this.posX_inicial = (CANVAS_WIDTH - this.wT)/2; //337.5
+        this.posX_inicial = (this.canvasWidth - this.wT)/2; //337.5
         this.posX_final = this.posX_inicial + this.wT;
-        this.posY_inicial = 115;
+        this.posY_inicial = 125; //antes 115
         this.posY_final= this.posY_inicial + this.hT;
         this.lado = this.wT/this.cols;
         this.radius = (this.lado - this.padding) / 2;
