@@ -162,20 +162,88 @@
                 <a href="home.html">Home ></a>
                 <p>4 en linea</p>
             </div>
-            <div class="container-popup3" id="container-popup3">
-                <div class="popup3" id="popup3">
-                    <button id="btnStart">Comenzar a jugar</button>
+
+            <!-- PopUp 1: Ingrese su nombre -->
+            <div class="container-popup container-popup1" id="container-popup1">
+                <div class="popup popup1" id="popup1">
+                    <label for="name">Ingrese su nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="btn-nav">
+                        <a></a><a id="btn-siguiente1" type="button" class="btn-siguiente">Siguiente</a>
+                    </div>
                 </div>
             </div>
-            <div class="container-popup4" id="container-popup4">
-                <div class="popup4" id="popup4">
+
+            <!-- PopUp 2: Elija el tablero -->
+            <div class="container-popup container-popup2" id="container-popup2">
+                <div class="popup popup2" id="popup2">
+                    <h3>Elije un Tablero</h3>
+                    <div>
+                        <button id="4" class="btn-tablero">4 en linea</button>
+                        <button id="5" class="btn-tablero">5 en linea</button>
+                    </div>
+                    <div>
+                        <button id="6" class="btn-tablero">6 en linea</button>
+                        <button id="7" class="btn-tablero">7 en linea</button>
+                    </div>
+                    <div class="btn-nav">
+                        <a id="btn-anterior2" type="button" class="btn-anterior">Atrás</a>
+                        <a id="btn-siguiente2" type="button" class="btn-siguiente">Siguiente</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PopUp 3: Elija su personaje -->
+            <div class="container-popup container-popup3" id="container-popup3">
+                <div class="popup popup3" id="popup3">
+                    <h3>Elije tu Personaje</h3>
+                    <div>
+                        <button id="gato" class="btn-player"><img src="images/juego/gato.png" alt="Jugador Gato"></button>
+                        <button id="burro" class="btn-player"><img src="images/juego/burro.png" alt="Jugador Burro"></button>
+                    </div>
+                    <div class="btn-nav">
+                        <a id="btn-anterior3" type="button" class="btn-anterior">Atrás</a>
+                        <a id="btn-siguiente3" type="button" class="btn-siguiente">Siguiente</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PopUp 4: Comenzar a jugar -->
+            <div class="container-popup container-popup4" id="container-popup4">
+                <div class="popup popup4" id="popup4">
+                    <button id="btnStart" class="btn-jugar">Comenzar a jugar</button>
+                    <div class="btn-nav">
+                        <a id="btn-anterior4" type="button" class="btn-anterior">Atrás</a><a></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PopUp 5: Reintentar -->
+            <div class="container-popup container-popup5" id="container-popup5">
+                <div class="popup popup5" id="popup5">
                     <h3>Se terminó el tiempo!</h3>
-                    <button id="btnRestart">Volver a intentarlo</button>
+                    <button id="btnRestart" class="btn-reintentar">Volver a intentarlo</button>
+                </div>
+            </div>
+
+            <!-- PopUp 6: Felicitaciones -->
+            <div class="container-popup container-popup6" id="container-popup6">
+                <div class="popup popup6" id="popup6">
+                    <p>Felicitaciones <span id="ganador"></span> GANASTE!!!</p>
+                    <button id="btnRestart2" class="btn-reintentar">Volver a jugar</button>
+                </div>
+            </div>
+
+            <!-- PopUp 7: Game Over -->
+            <div class="container-popup container-popup7" id="container-popup7">
+                <div class="popup popup7" id="popup7">
+                    <p class="game-over">GAME OVER</p>
+                    <button id="btnRestart3" class="btn-reintentar">Volver a intentarlo</button>
                 </div>
             </div>
 
             <!-- timer -->
-            <div class="container-timer">
+            <div class="container-timer" id="container-timer">
                 <span id="timer" class="timer">1:30</span>
             </div>
 
@@ -185,22 +253,20 @@
             <!-- slider de juego -->
             <div class="slider-juego">
                 <ul class="slide-track-juego">
-                    <li class="slide-juego"><img src="images/4 EN LINEA/burro-de-shrek.jpg" alt=""></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/burro-sheck~3.png" alt="" class="img-ficha"></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/burrovsgato.jpg" alt=""></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/gato2.jpg" alt=""></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/gato~3.jpeg" alt="" class="img-ficha"></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/juego-principal.jpg" alt=""></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/shrek.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/juego/burro.png" alt="" class="img-ficha"></li>
+                    <li class="slide-juego"><img src="images/juego/gato.png" alt="" class="img-ficha"></li>
+                    <li class="slide-juego"><img src="images/juego/JuegoComenzado.PNG" alt=""></li>
+                    <li class="slide-juego"><img src="images/juego/PantTablero.PNG" alt=""></li>
+                    <li class="slide-juego"><img src="images/juego/shrek.png" alt=""></li>
+                    <li class="slide-juego"><img src="images/juego/shrekPersonajes.jpg" alt=""></li>
         
                     <!-- mismas slides -->
-                    <li class="slide-juego"><img src="images/4 EN LINEA/burro-de-shrek.jpg" alt=""></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/burro-sheck~3.png" alt="" class="img-ficha"></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/burrovsgato.jpg" alt=""></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/gato2.jpg" alt=""></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/gato~3.jpeg" alt="" class="img-ficha"></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/juego-principal.jpg" alt=""></li>
-                    <li class="slide-juego"><img src="images/4 EN LINEA/shrek.jpg" alt=""></li>
+                    <li class="slide-juego"><img src="images/juego/burro.png" alt="" class="img-ficha"></li>
+                    <li class="slide-juego"><img src="images/juego/gato.png" alt="" class="img-ficha"></li>
+                    <li class="slide-juego"><img src="images/juego/JuegoComenzado.PNG" alt=""></li>
+                    <li class="slide-juego"><img src="images/juego/PantTablero.png" alt=""></li>
+                    <li class="slide-juego"><img src="images/juego/shrek.png" alt=""></li>
+                    <li class="slide-juego"><img src="images/juego/shrekPersonajes.jpg" alt=""></li>
                 </ul>
             </div>
 
@@ -209,20 +275,13 @@
                 <div class="contenido">
                     <div class="instrucciones">
                         <h2>4 en linea: Burro vs Gato - Shrek</h2>
-                        <p>Las normas del cuatro en línea son muy sencillas. Se juega siempre entre 2 jugadores y sobre un tablero de 7x6 casillas. En cada turno cada jugador coloca una ficha de su personaje en una columna y esta cae hasta la primera casilla disponible. El que consigue ubicar 4 fichas del mismo personaje seguidas en horizontal, vertical u oblicuo gana. Si nadie lo consigue la partida termina en empate.</p>
-                        <h3>Comandos para jugar</h3>
-                        <hr class="card-hr">
-                        <div>
-                            <div class="instrucciones-flechas">
-                                <p>Utilizar las flechas del teclado (izquierda y derecha), para elegir la columna en la que quieres que caiga la ficha.</p>
-                                <i class="fa-solid fa-left-long fa-2xl"></i>
-                                <i class="fa-solid fa-right-long fa-2xl"></i>
-                            </div>
-                            <div class="instrucciones-juego-flechas">
-                                <p>Una vez elegida la columna, soltar la ficha presionando el enter.</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><mask id="ipSEnterKey0"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path fill="#fff" stroke="#fff" d="M44 44V4H24v16H4v24h40Z"/><path stroke="#000" d="m21 28l-4 4l4 4"/><path stroke="#000" d="M34 23v9H17"/></g></mask><path fill="#679cea" d="M0 0h48v48H0z" mask="url(#ipSEnterKey0)"/></svg>
-                            </div>
-                        </div>
+                        <p>Las normas del cuatro en línea son muy sencillas. Se juega siempre entre 2 jugadores y sobre un tablero que puede variar de tamaño a elección del jugador. En cada turno los jugadores colocan su ficha personificada en una columna y esta cae hasta la primera casilla disponible. El que consigue ubicar "x" fichas (segun el tamaño de tablero elegido) del mismo personaje seguidas en horizontal, vertical u oblicuo, gana. Si nadie lo consigue la partida termina en empate, si es que no finaliza antes el tiempo.</p>
+                        <h3>¿Como jugar?</h3>
+                        <p>Cuando sea tu turno, agarra tu ficha con el click izquierdo del mouse y manteniendola presionada transportala por encima del tablero hasta la columna en la que desees soltarla</p>
+                        <p>Una vez que sueltes la ficha, el turno pasará al equipo contrario, quien deberá realizar el mismo procedimiento.</p>
+                        <p>Utiliza la estrategia para bloquear a tu adversario mientras intentas ser el primero en colocar tus fichas en línea para ganar.</p>
+                        <h3>Objetivo:</h3>
+                        <p>Hacer 4, 5, 6 o 7 en linea (según el tablero que hayas seleccionado). Ejemplo: en el 4 en linea deberás formar una hilera de 4 fichas seguidas con tu personaje.</p>
                     </div>
                     <div class="contenido-comentarios">
                         <div>

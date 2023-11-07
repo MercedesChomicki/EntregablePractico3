@@ -827,7 +827,7 @@ nav{
         scale: 1.3 1.3;
     }
     
-    /* JUEGO */
+    /* BREADCRUMS */
     .breadcrums{
         color: var(--black);
         display: flex;
@@ -847,57 +847,143 @@ nav{
         color: var(--white);
     }
 
+    /* ESPACIO JUEGO */
+    .container-popup1{
+        display: flex;
+    }
+
+    .container-popup2{
+        display: none;
+    }
     
     .container-popup3{
-        display: flex;
+        display: none;
     }
 
     .container-popup4{
         display: none;
     }
 
-    .container-popup3, .container-popup4{
-        width: 89%;
-        height: 600px;
+    .container-popup5{
+        display: none;
+    }
+
+    .container-popup6{
+        display: none;
+    }
+
+    .container-popup7{
+        display: none;
+    }
+
+    .container-popup{
+        width: 100%;
+        height: 28%;
         position: absolute;
-        margin-left: 80px;
         justify-content: center;
-        align-items: center;
-        background-color: rgba(22, 22, 22, 0.643);
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 200;
     }
 
-    .popup3{
-        display: flex;
-    }
-
-    .popup4{
+    .popup{ 
+        background-color: var(--primary-s1);
+        color: var(--white);
+        width: 500px;
+        height: 250px;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: var(--border-radius);
         display: flex;
         flex-direction: column;
-    }
-    
-    .popup3, .popup4{
-        justify-content: center;
+        justify-content:space-around;
         align-items: center;
-        width: 400px;
-        height: 400px;
-        text-wrap: wrap;
-        background-color: var(--primary-s1);
-        background: rgb(227,134,247);
-        background: linear-gradient(240deg, rgb(115, 0, 141) 0%, rgb(219, 88, 245) 0%, rgba(227,134,247,1) 51%, rgba(221,98,247,1) 73%, rgba(196,23,232,1) 100%);
-        border-radius: 10%;
+        margin-top: 160px;
     }
 
-    .popup3 button, .popup4 button{
-        background-color: var(--secondary);
-        width: 40%;
-        height: 20%;
+    .popup6 p{
+        font-size: var(--font-size-h3);
+        margin-top: 50px;
     }
-    .popup3 button:hover{
+
+
+    .popup div .btn-tablero{
+        background-color: var(--secondary);
+        padding: 15px 40px;
+        margin: -15px 5px;
+    }
+
+    .popup div .btn-tablero:hover{
         background-color: var(--secondary-l1);
+        cursor: pointer;
+    }
+
+    .popup .btn-nav{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .popup .btn-nav:hover{
+        cursor: pointer;
+    }
+
+    .popup1 label{
+        margin-bottom: 10px;
+        font-family: var(--h3);
+        font-size: var(--font-size-h3);
+    }
+
+    .popup3 div{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .popup4 h3{
         margin-bottom: 20px;
+    }
+
+    .btn-player{
+        margin: 0 10px;
+        background-color: var(--white);
+    }
+    
+    .btn-player, .btn-player img{
+        border-radius: 100%;
+        box-shadow: var(--box-shadow);
+    }
+
+    .btn-player img{
+        width: 130px;
+        height: auto;
+        padding: 5px 0 2px 0;
+    }
+
+    .btn-jugar{
+        margin-top: 60px;        
+    }
+
+    .btn-reintentar {
+        margin-bottom: 60px;       
+    }
+
+    .btn-jugar, .btn-reintentar {
+        display: flex;
+        width: 150px;
+        height: 60px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        line-height: 23px;
+        font-family: var(--font-button);
+        border-radius: var(--border-radius); 
+        box-shadow: var(--box-shadow);   
+        background: linear-gradient(45deg, #00ccff, #0e1538, #0e1538, #d400d4);
+    }
+
+    .btn-jugar:hover,  .btn-reintentar:hover {
+        background: linear-gradient(45deg, #6de0fd, #232c57, #232c57, #e66ae6);
+        cursor: pointer;
     }
     
     #canvas{
@@ -907,7 +993,7 @@ nav{
     .container-timer{
         width: 100%;
         height: 30px;
-        display: flex;
+        display: none; /* poner en flex cuando el usuario seleccione comenzar a jugar */
         justify-content: center;
         align-items: center;
         position: absolute;

@@ -1,10 +1,11 @@
 class Juego{
-    constructor(img1, img2, imgF, filas, cols, ctx, canvasWidth, canvasHeight){
+    constructor(img1, img2, imgF, filas, cols, ctx, canvasWidth, canvasHeight, userName){
         this.img1 = img1;
         this.img2 = img2;
         this.imgF = imgF;
         this.filas = filas;
         this.cols = cols;
+        this.cantFig = (filas * cols)-1;
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
         this.lastClickedFigure = null;
@@ -12,7 +13,10 @@ class Juego{
         this.figuresInside = new Array();
         this.posYfigure1 = this.canvasHeight - 50; 
         this.posYfigure2 = this.canvasHeight - 50; 
-        this.cantFig = (filas * cols)-1;
+        this.posYfigure3 = this.canvasHeight - 50; 
+        this.posYfigure4 = this.canvasHeight - 50; 
+        this.posYfigure5 = this.canvasHeight - 50; 
+        this.posYfigure6 = this.canvasHeight - 50; 
         this.ctx = ctx;
         this.tablero = new Tablero(this.imgF, this.filas, this.cols, this.ctx, this.canvasWidth);
         this.figures = new Array();
@@ -21,6 +25,7 @@ class Juego{
         this.lado = this.tablero.getLado();
         this.previousPlayer = 0;
         this.currentPlayer = PLAYER_1;
+        this.userName = userName;
 
         //creamos variables donde vamos a guardar las pos iniciales de la ficha clickeada
         this.posInicialX = 0; 
@@ -34,8 +39,16 @@ class Juego{
     }
 
     addFigure(){
-        this.addFigureJ1();
-        this.addFigureJ2();
+        if(this.figures.length < this.cantFig/3){
+            this.addFigureJ1(12);
+            this.addFigureJ2(12);
+        } else if(this.figures.length < (this.cantFig/3 + this.cantFig/3)){
+            this.addFigureJ1(8);
+            this.addFigureJ2(8);
+        } else {
+            this.addFigureJ1(6);
+            this.addFigureJ2(6);
+        }
         this.drawFigure();
     }
     
@@ -48,22 +61,48 @@ class Juego{
         }
     }
 
-    addFigureJ1(){
-        let posX =  this.canvasWidth/8;
-        let posY =  this.posYfigure1;
-       
-        let circle1 = new Circle(posX, posY, this.radius, this.ctx, this.img1);    
-        this.figures.push(circle1);
-        this.posYfigure1 -= 20; 
+    addFigureJ1(cant){
+        let posX =  this.canvasWidth/cant;
+        let posY = 0;
+        let circle1 = 0;
+        if(cant === 12){
+            posY =  this.posYfigure1;
+            circle1 = new Circle(posX, posY, this.radius, this.ctx, this.img1);    
+            this.figures.push(circle1);
+            this.posYfigure1 -= 30; 
+        } else if(cant === 8){
+            posY =  this.posYfigure3;
+            circle1 = new Circle(posX, posY, this.radius, this.ctx, this.img1);    
+            this.figures.push(circle1);
+            this.posYfigure3 -= 30;
+        } else{
+            posY =  this.posYfigure5;
+            circle1 = new Circle(posX, posY, this.radius, this.ctx, this.img1);    
+            this.figures.push(circle1);
+            this.posYfigure5 -= 30;
+        }
     }
 
-    addFigureJ2(){
-        let posX =  this.canvasWidth - (this.canvasWidth/8);
-        let posY =  this.posYfigure2;
-    
-        let circle2 = new Circle(posX, posY, this.radius, this.ctx, this.img2);    
-        this.figures.push(circle2);
-        this.posYfigure2 -= 20; 
+    addFigureJ2(cant){
+        let posX =  this.canvasWidth - (this.canvasWidth/cant);
+        let posY =  0;
+        let circle2 = 0;
+        if(cant === 12){
+            posY = this.posYfigure2;
+            circle2 = new Circle(posX, posY, this.radius, this.ctx, this.img2);    
+            this.figures.push(circle2);
+            this.posYfigure2 -= 30; 
+        } else if(cant === 8){
+            posY = this.posYfigure4;
+            circle2 = new Circle(posX, posY, this.radius, this.ctx, this.img2);    
+            this.figures.push(circle2);
+            this.posYfigure4 -= 30;
+        } else {
+            posY = this.posYfigure6;
+            circle2 = new Circle(posX, posY, this.radius, this.ctx, this.img2);    
+            this.figures.push(circle2);
+            this.posYfigure6 -= 30;
+        }
     }
 
     addFigures() {
@@ -109,8 +148,13 @@ class Juego{
                          
                             //Ckequea si al tirar la ficha, el jugador ganó
                             if(this.tablero.checkForWin(col, row - 1)){
-                                console.log("Gano el jugador "+this.previousPlayer);
-                                 //TERMINAR EL JUEGO
+                                if(this.previousPlayer === PLAYER_1){
+                                    console.log("Gano el jugador "+this.previousPlayer);
+                                     //TERMINAR EL JUEGO
+                                    this.popupWinner();
+                                } else {
+                                    this.popupLoser();
+                                }
                             }
                             return;
                         }
@@ -125,6 +169,7 @@ class Juego{
                             if(this.tablero.checkForWin(col, row)){
                                 console.log("Gano el jugador "+this.previousPlayer);
                                 //TERMINAR EL JUEGO
+                                this.popupWinner();
                             }
                             return;
                         }
@@ -134,6 +179,17 @@ class Juego{
             inicio += this.lado;
             col++;
         }
+    }
+
+    popupWinner(){
+        document.getElementById("container-timer").style.display = "none";
+        document.getElementById('container-popup6').style.display = "flex";
+        document.getElementById('ganador').textContent = this.userName;
+    }
+
+    popupLoser(){
+        document.getElementById("container-timer").style.display = "none";
+        document.getElementById('container-popup7').style.display = "flex";
     }
 
     drawFigInCell(x, y, fig){
@@ -189,7 +245,6 @@ class Juego{
         } else{
             console.log("Está dentro del tablero, no se puede mover");
         }
-
     } 
 
     onMouseUp(e){

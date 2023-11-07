@@ -10,12 +10,13 @@ class Tablero{
         this.padding = 10;
         this.posX_inicial = (this.canvasWidth - this.wT)/2; //337.5
         this.posX_final = this.posX_inicial + this.wT;
-        this.posY_inicial = 125; //antes 115
+        this.posY_inicial = 115; 
         this.posY_final= this.posY_inicial + this.hT;
         this.lado = this.wT/this.cols;
         this.radius = (this.lado - this.padding) / 2;
         this.board = new Array();
         this.aux = new Array();
+        this.num = this.filas - 2;
     }
 
     initializeBoard() {
@@ -125,7 +126,7 @@ class Tablero{
             }
         }
         console.log(count);
-        return count >= 4;
+        return count >= this.num;
     }
     
     checkVerticalWin(col, row) {
@@ -150,7 +151,7 @@ class Tablero{
             }
         }
         console.log(count);
-        return count >= 4;
+        return count >= this.num;
     }
     
     checkDiagonalWin1(col, row) {
@@ -175,7 +176,7 @@ class Tablero{
             }
         }
         console.log(count);
-        return count >= 4;
+        return count >= this.num;
     }
     
     checkDiagonalWin2(col, row) {
@@ -200,7 +201,7 @@ class Tablero{
             }
         }
         console.log(count);
-        return count >= 4;
+        return count >= this.num;
     }
 
     getAuxPos(col, row){
