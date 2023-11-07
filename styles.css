@@ -958,7 +958,7 @@ nav{
         padding: 5px 0 2px 0;
     }
 
-    .btn-jugar{
+    .btn-start{
         margin-top: 60px;        
     }
 
@@ -966,7 +966,7 @@ nav{
         margin-bottom: 60px;       
     }
 
-    .btn-jugar, .btn-reintentar {
+    .btn-start, .btn-reintentar {
         display: flex;
         width: 150px;
         height: 60px;
@@ -981,7 +981,7 @@ nav{
         background: linear-gradient(45deg, #00ccff, #0e1538, #0e1538, #d400d4);
     }
 
-    .btn-jugar:hover,  .btn-reintentar:hover {
+    .btn-start:hover,  .btn-reintentar:hover {
         background: linear-gradient(45deg, #6de0fd, #232c57, #232c57, #e66ae6);
         cursor: pointer;
     }
