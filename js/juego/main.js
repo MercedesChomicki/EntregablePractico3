@@ -178,7 +178,7 @@ document.getElementById("btnStart").addEventListener('click', ()=>{
     document.getElementById("container-timer").style.display = "flex";
     // Llamar a la función para iniciar el temporizador
     drawGame();
-    startTimer();
+    restartTimer();
 })
 
 let previous4 = document.getElementById("btn-anterior4");
@@ -192,38 +192,41 @@ document.getElementById("btnRestart").addEventListener('click', ()=>{
     document.getElementById("container-popup5").style.display = "none";
     //ARREGLAR ERROR SI TERMINA EL TIEMPO CUANDO UNA FICHA ESTA EN MOVIMIENTO 
     drawGame();
-    startTimer();
+    document.getElementById('timer').textContent = '1:30';
+    restartTimer();
 })
 
 document.getElementById("btnRestart2").addEventListener('click', ()=>{
     document.getElementById("container-popup6").style.display = "none";
     document.getElementById("container-timer").style.display = "flex";
     drawGame();
-    startTimer();
+    document.getElementById('timer').textContent = '1:30';
+    restartTimer();
 })
 
 document.getElementById("btnRestart3").addEventListener('click', ()=>{
     document.getElementById("container-popup7").style.display = "none";
     document.getElementById("container-timer").style.display = "flex";
     drawGame();
-    startTimer();
+    document.getElementById('timer').textContent = '1:30';
+    restartTimer();
 })
 
 // TIMER
 function startTimer() {
     let minutes = 1;
     let seconds = 30;
-    
+
     function updateTimer() {
         if (seconds > 0) {
-        seconds--;
+            seconds--;
         } else if (minutes > 0) {
-        minutes--;
-        seconds = 59;
+            minutes--;
+            seconds = 59;
         } else {
-        // Cuando el temporizador llega a 0, realiza alguna acción o muestra un mensaje.
-        document.getElementById("container-popup5").style.display = "flex";
-        clearInterval(timer);
+            // Cuando el temporizador llega a 0, muestra un mensaje.
+            document.getElementById("container-popup5").style.display = "flex";
+            clearInterval(timer);
         }
 
         // Formatea los minutos y segundos para que siempre tengan dos dígitos
@@ -235,8 +238,15 @@ function startTimer() {
     }
 
     // Iniciar el temporizador y actualizar cada segundo (1000 ms)
-    const timer = setInterval(updateTimer, 1000);
+    timer = setInterval(updateTimer, 1000);
 }
+
+// Función para reiniciar el temporizador
+function restartTimer() {
+    clearInterval(timer); // Borra el temporizador existente
+    startTimer(); // Inicia un nuevo temporizador
+}
+
 
 function drawGame(){
 
