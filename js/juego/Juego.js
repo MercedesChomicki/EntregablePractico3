@@ -55,7 +55,7 @@ class Juego{
     drawFigure(){
         this.clearCanvas();
         this.tablero.initializeBoard();
-        this.tablero.setValuesBusy();
+        this.tablero.setValuesTaken();
         for(let i = 0; i < this.figures.length; i++){
             this.figures[i].draw();
         }
@@ -122,7 +122,6 @@ class Juego{
         // y col sea menor al total de columnas: 
         while(inicio < fin && col < this.cols){ 
             // Si la figura se encuentra dentro del cuadrado x
-            // if(fig.posX > this.xInicial && fig.posX < (this.xInicial + this.lado)){
             if(fig.posX > inicio && fig.posX < (inicio + this.lado)){
                 // Centramos la figura en el centro de la col 
                 let x = inicio + this.radius + (this.padding/2);
@@ -130,7 +129,7 @@ class Juego{
                 for(let row = 0; row < this.filas; row++){
                     // Obtener la posicion del tablero en (x: col, y:row)
                     let y = this.tablero.getPosY(col, row) + this.radius + (this.padding/2);
-                    if(this.tablero.isBusy(col, row) !== 0){
+                    if(this.tablero.isTaken(col, row) !== 0){
                         // En el caso de que la columna esté llena
                         if(row === 0){
                             this.returnFigPosI(fig);
@@ -149,8 +148,6 @@ class Juego{
                             //Ckequea si al tirar la ficha, el jugador ganó
                             if(this.tablero.checkForWin(col, row - 1)){
                                 if(this.previousPlayer === PLAYER_1){
-                                    console.log("Gano el jugador "+this.previousPlayer);
-                                     //TERMINAR EL JUEGO
                                     this.popupWinner();
                                 } else {
                                     this.popupLoser();
@@ -167,9 +164,11 @@ class Juego{
 
                             //Ckequea si al tirar la ficha, el jugador ganó
                             if(this.tablero.checkForWin(col, row)){
-                                console.log("Gano el jugador "+this.previousPlayer);
-                                //TERMINAR EL JUEGO
-                                this.popupWinner();
+                                if(this.previousPlayer === PLAYER_1){
+                                    this.popupWinner();
+                                } else {
+                                    this.popupLoser();
+                                }
                             }
                             return;
                         }
@@ -229,7 +228,6 @@ class Juego{
     
             //Si es el turno del jugador 1 y la ficha está del lado izq del canvas:
             if(this.currentPlayer === 1 && fig.posX < this.canvasWidth/2){ 
-                console.log("Turno del jugador 1");
                 this.play(fig);
                 this.previousPlayer = PLAYER_1;
                 this.currentPlayer = PLAYER_2;
@@ -237,14 +235,11 @@ class Juego{
             }
             //Si es el turno del jugador 2 y la ficha está del lado derecho del canvas:
             else if(this.currentPlayer === 2 && fig.posX > this.canvasWidth/2){
-                console.log("Turno del jugador 2");
                 this.play(fig);
                 this.previousPlayer = PLAYER_2;
                 this.currentPlayer = PLAYER_1;
             }
-        } else{
-            console.log("Está dentro del tablero, no se puede mover");
-        }
+        } 
     } 
 
     onMouseUp(e){
@@ -254,7 +249,6 @@ class Juego{
         if(this.tablero.isOnTheBoard(fig.posX, fig.posY)){
             this.tirar(fig);
             this.insideTheBoard(fig);
-            console.log(this.getFiguresInside());
         } else{
             //LA FIGURA VUELVE A LA POS INICIAL
             this.returnFigPosI(fig);
@@ -265,20 +259,6 @@ class Juego{
         if(this.isMouseDown && this.lastClickedFigure != null){
             this.lastClickedFigure.setPos(e.layerX - MARGIN_LEFT_CANVAS, e.layerY - MARGIN_TOP_CANVAS);
             this.drawFigure();
-        }
-    }
-
-    onClick(e){
-        let fig = this.findClickedFigure(e.layerX, e.layerY);
-        if(this.isInside(fig)){
-            //NO SE TIENE QUE PODER MOVER
-        } 
-    }
-
-    onDblClick(e){
-        let fig = this.findClickedFigure(e.layerX, e.layerY);
-        if(this.isInside(fig)){
-           //NO SE TIENE QUE PODER MOVER
         }
     }
 

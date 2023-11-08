@@ -8,7 +8,7 @@ class Tablero{
         this.wT = 525;
         this.hT = 450;
         this.padding = 10;
-        this.posX_inicial = (this.canvasWidth - this.wT)/2; //337.5
+        this.posX_inicial = (this.canvasWidth - this.wT)/2; 
         this.posX_final = this.posX_inicial + this.wT;
         this.posY_inicial = 115; 
         this.posY_final= this.posY_inicial + this.hT;
@@ -29,9 +29,8 @@ class Tablero{
                 this.board[col][row] = {
                     x: posX,
                     y: posY,
-                    busy: 0 
+                    taken: 0 
                 }
-                // Cambiar busy a taken (ocupado de lugar)
                 this.drawBoard(posX, posY);
             }
         }
@@ -41,10 +40,10 @@ class Tablero{
         new Rect(posX, posY, this.lado, this.lado, this.ctx, this.img, this.padding, this.radius).draw();
     }
 
-    setValuesBusy(){
+    setValuesTaken(){
         for (let col = 0; col < this.cols; col++) {
             for (let row = 0; row < this.filas; row++) {
-                this.board[col][row].busy = this.aux[col][row];
+                this.board[col][row].taken = this.aux[col][row];
             }
         }
     }
@@ -53,20 +52,20 @@ class Tablero{
         for (let col = 0; col < this.cols; col++) {
             this.aux[col] = new Array();
             for (let row = 0; row < this.filas; row++) {
-                this.aux[col][row] = this.board[col][row].busy
+                this.aux[col][row] = this.board[col][row].taken
             }
         }
     }
 
     ocuppy(col, row, player){
         this.setAuxPos(col, row, player);
-        this.board[col][row].busy = player; // Va a ser 1 o 2 depende que jugador haya tirado
+        this.board[col][row].taken = player; // Va a ser 1 o 2 depende que jugador haya tirado
     }
     
-    isBusy(col, row){
-        if(this.board[col][row].busy === 0){
+    isTaken(col, row){
+        if(this.board[col][row].taken === 0){
             return 0; // ESTA LIBRE
-        } else if(this.board[col][row].busy === 1){
+        } else if(this.board[col][row].taken === 1){
             return 1; //JUGADOR 1
         } else {
             return 2; //JUGADOR 2
@@ -105,12 +104,12 @@ class Tablero{
     }
     
     checkHorizontalWin(col, row) {
-        const player = this.board[col][row].busy;
+        const player = this.board[col][row].taken;
         let count = 1;
     
         // Verifica hacia la izquierda
         for (let c = col - 1; c >= 0; c--) {
-            if (this.board[c][row].busy === player) {
+            if (this.board[c][row].taken === player) {
                 count++;
             } else {
                 break;
@@ -119,23 +118,23 @@ class Tablero{
     
         // Verifica hacia la derecha
         for (let c = col + 1; c < this.cols; c++) {
-            if (this.board[c][row].busy === player) {
+            if (this.board[c][row].taken === player) {
                 count++;
             } else {
                 break;
             }
         }
-        console.log(count);
+
         return count >= this.num;
     }
     
     checkVerticalWin(col, row) {
-        const player = this.board[col][row].busy;
+        const player = this.board[col][row].taken;
         let count = 1;
     
         // Verifica hacia arriba
         for (let r = row - 1; r >= 0; r--) {
-            if (this.board[col][r].busy === player) {
+            if (this.board[col][r].taken === player) {
                 count++;
             } else {
                 break;
@@ -144,23 +143,23 @@ class Tablero{
     
         // Verifica hacia abajo
         for (let r = row + 1; r < this.filas; r++) {
-            if (this.board[col][r].busy === player) {
+            if (this.board[col][r].taken === player) {
                 count++;
             } else {
                 break;
             }
         }
-        console.log(count);
+ 
         return count >= this.num;
     }
     
     checkDiagonalWin1(col, row) {
-        const player = this.board[col][row].busy;
+        const player = this.board[col][row].taken;
         let count = 1; 
     
         // Verifica diagonal superior izquierda
         for (let r = row - 1, c = col - 1; r >= 0 && c >= 0; r--, c--) {
-            if (this.board[c][r].busy === player) {
+            if (this.board[c][r].taken === player) {
                 count++;
             } else {
                 break;
@@ -169,23 +168,23 @@ class Tablero{
     
         // Verifica diagonal inferior derecha
         for (let r = row + 1, c = col + 1; r < this.filas && c < this.cols; r++, c++) {
-            if (this.board[c][r].busy === player) {
+            if (this.board[c][r].taken === player) {
                 count++;
             } else {
                 break;
             }
         }
-        console.log(count);
+   
         return count >= this.num;
     }
     
     checkDiagonalWin2(col, row) {
-        const player = this.board[col][row].busy;
+        const player = this.board[col][row].taken;
         let count = 1; 
     
         // Verifica diagonal superior derecha
         for (let r = row - 1, c = col + 1; r >= 0 && c < this.cols; r--, c++) {
-            if (this.board[c][r].busy === player) {
+            if (this.board[c][r].taken === player) {
                 count++;
             } else {
                 break;
@@ -194,13 +193,13 @@ class Tablero{
     
         // Verifica diagonal inferior izquierda
         for (let r = row + 1, c = col - 1; r < this.filas && c >= 0; r++, c--) {
-            if (this.board[c][r].busy === player) {
+            if (this.board[c][r].taken === player) {
                 count++;
             } else {
                 break;
             }
         }
-        console.log(count);
+  
         return count >= this.num;
     }
 

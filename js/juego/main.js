@@ -49,8 +49,6 @@ let next1 = document.getElementById("btn-siguiente1");
 inputName.addEventListener("input", function() {
   if (inputName.value.trim() !== "") {
     userName = inputName.value;
-    console.log(userName.toUpperCase()); //transforma el texto a mayuscula
-
     unlockBtn();
       
     // Si el campo de entrada está completo, habilitar el botón
@@ -136,11 +134,9 @@ let fig_option = null;
 function selected(option) {
     fig_option = option;
     if(fig_option === "gato"){
-        console.log("gato");
         img1.src = 'images/juego/gato.png';
         img2.src = 'images/juego/burro.png';
     } else if(fig_option === "burro"){
-        console.log("burro");
         img1.src = 'images/juego/burro.png';
         img2.src = 'images/juego/gato.png';
     } 
@@ -260,18 +256,8 @@ function drawGame(){
         juego.onMouseMove(e);
     }
 
-    function onClick(e){
-        juego.onClick(e);
-    }
-
-    function onDblClick(e){
-        juego.onDblClick(e);
-    }
-
     canvas.addEventListener('mousedown', onMouseDown, false);
     canvas.addEventListener('mouseup', onMouseUp, false);
     canvas.addEventListener('mousemove', onMouseMove, false);
-    canvas.addEventListener('click', onClick, false);
-    canvas.addEventListener('dblclick', onDblClick, false);
 
 }
